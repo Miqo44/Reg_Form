@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for i in categories %}
+        <a href="{% url 'home_detail' i.id %}"><img src="{{ i.img.url }}" width="400px" alt=""></a>
+        <h1>{{ i.name }}</h1>
+        <hr>
+    {% endfor %}
+{% endblock %}

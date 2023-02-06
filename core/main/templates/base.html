@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <a href="{% url 'home' %}"><Button>HOME</Button></a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}"><Button>{{ user.username }} - LOGOUT</Button></a>
+    {% else %}
+        <a href="{% url 'register' %}"><Button>REGISTER</Button></a>
+        <a href="{% url 'login' %}"><Button>LOGIN</Button></a>
+    {% endif %}
+    <hr>
+
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+
+<footer>
+    <hr>
+    <ul>
+        <li>Email - vardanik@pasport.com</li>
+        <li>Phone - 078543698</li>
+        <li>Name - Jupol20</li>
+        <li>Location - Kirovakan Armenia</li>
+    </ul>
+
+</footer>
+
+</html>

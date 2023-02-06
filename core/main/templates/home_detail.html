@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for i in cars %}
+        {% for j in i.carcateg.all %}
+            <h1>{{ j.name }}</h1>
+            <a href="{% url 'home_detail_detail' j.id %}"><img src="{{ j.img.url }}" width="300px" alt=""></a>
+            <p>{{ j.about }}</p>
+            <h4>{{ j.price }}</h4>
+        {% endfor %}
+        
+    {% endfor %}
+
+{% endblock %}
